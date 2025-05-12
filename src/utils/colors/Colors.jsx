@@ -1,0 +1,35 @@
+export const BLACK = '#000000';
+export const BLACK_50 = '#F2F2F2';
+export const BLACK_100 = '#E0E0E0';
+export const BLACK_200 = '#BDBDBD';
+export const BLACK_300 = '#9E9E9E';
+export const BLACK_400 = '#757575';
+export const BLACK_500 = '#616161';
+export const BLACK_600 = '#424242';
+export const BLACK_700 = '#212121';
+export const BLACK_800 = '#121212';
+export const BLACK_900 = '#0D0D0D';
+export const BLACK_LIGHT = '#000000B3';
+
+export const WHITE = '#FFFFFF';
+export const WHITE_50 = '#FAFAFA';
+export const WHITE_100 = '#F5F5F5';
+export const WHITE_200 = '#EEEEEE';
+export const WHITE_300 = '#E0E0E0';
+export const WHITE_400 = '#BDBDBD';
+export const WHITE_500 = '#9E9E9E';
+export const WHITE_600 = '#757575';
+export const WHITE_700 = '#616161';
+export const WHITE_800 = '#424242';
+export const WHITE_900 = '#212121';
+
+export const ORANGE_50 = '#FFF4E1';
+export const ORANGE_100 = '#FFE4B8';
+export const ORANGE_200 = '#FFD48A';
+export const ORANGE_300 = '#FBC55C';
+export const ORANGE_400 = '#FBB341';
+export const ORANGE_500 = '#FBAE3C';
+export const ORANGE_600 = '#E89C35';
+export const ORANGE_700 = '#CC842D';
+export const ORANGE_800 = '#B06D25';
+export const ORANGE_900 = '#93561D';
