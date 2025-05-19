@@ -16,7 +16,7 @@ const Splash = () => {
   useEffect(() => {
     setTimeout(() => {
       navigation.replace('MainDrawer');
-    }, 2500);
+    }, 2000);
   }, []);
   return (
     <View style={styles.container}>

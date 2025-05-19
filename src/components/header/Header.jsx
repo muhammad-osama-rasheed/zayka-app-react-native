@@ -17,8 +17,13 @@ import {
 } from 'react-native-size-matters';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {useNavigation} from '@react-navigation/native';
+import {useSelector} from 'react-redux';
+import LottieView from 'lottie-react-native';
 const Header = () => {
   const navigation = useNavigation();
+
+  const cartItems = useSelector(state => state.cart);
+
   return (
     <View style={styles.topContainer}>
       <View style={styles.topIconsContainer}>
@@ -29,23 +34,41 @@ const Header = () => {
             style={styles.burger}
             source={require('../../images/burger.png')}
           />
-          {/* <Icon name={'account-circle'} color={WHITE} size={18} /> */}
-          {/* <Text style={styles.nameText}>Osama</Text> */}
         </TouchableOpacity>
         <View style={styles.rightIconsContainer}>
-          <Icon name={'shopping-cart'} color={WHITE} size={18} />
+          {cartItems.length > 0 ? (
+            <TouchableOpacity
+              onPress={() => navigation.navigate('Cart')}
+              style={styles.cartContainer}>
+              <LottieView
+                source={require('../../utils/animations/cart.json')}
+                autoPlay
+                loop
+                style={{width: 32, height: 32}}
+              />
+            </TouchableOpacity>
+          ) : (
+            <TouchableOpacity onPress={() => navigation.navigate('Cart')}>
+              <Icon name={'shopping-cart'} color={WHITE} size={18} />
+            </TouchableOpacity>
+          )}
+
           <Icon name={'notifications'} color={WHITE} size={18} />
         </View>
       </View>
-      <View style={styles.searchBar}>
+      <TouchableOpacity
+        activeOpacity={0.9}
+        onPress={() => navigation.navigate('Search', {autoFocus: true})}
+        style={styles.searchBar}>
         <Icon name={'search'} size={20} color={ORANGE_500} />
         <TextInput
+          editable={false}
           style={styles.searchInput}
           placeholder="What are you looking for?"
           placeholderTextColor={BLACK_300}
           cursorColor={ORANGE_500}
         />
-      </View>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -101,6 +124,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     flexDirection: 'row',
     alignItems: 'center',
+    zIndex: 999,
   },
 
   searchInput: {

@@ -2,6 +2,7 @@ import React from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import MainBottom from '../../main/MainBottom';
 import CustomDrawer from './CustomDrawer';
+import BottomNavigator from '../bottom/BottomNavigator';
 
 const DrawerNavigator = () => {
   const Drawer = createDrawerNavigator();
