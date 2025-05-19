@@ -1,97 +1,202 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# 🍽️ Zayka – A Full-Stack Food Ordering App
 
-# Getting Started
+**Zayka** is a full-featured food ordering application built using the **MERN stack** (MongoDB, Express.js, React Native, Node.js). The app offers a smooth user experience with authentication, product listing, cart, order tracking, favorites, reviews, and much more.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+---
 
-## Step 1: Start Metro
+## 🛠️ Tech Stack
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+### Frontend (React Native)
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+- React Native `v0.79.2`
+- Redux Toolkit
+- Redux Persist
+- React Navigation (Stack, Drawer, Bottom Tabs)
+- React Native Toast
+- React Native Vector Icons
+- Lottie Animations
+- Async Storage
+- Ratings & Reviews
+- Animatable, Modal, and UI Enhancements
 
-```sh
-# Using npm
-npm start
+## 🔧 Used Libraries & Tools
 
-# OR using Yarn
-yarn start
+- React Native: Mobile app framework (v0.79.2)
+- React Navigation: Stack, Drawer, Bottom Tabs navigations
+- Redux Toolkit & React Redux: State management
+- Redux Persist: Redux state persistence
+- React Native Vector Icons: Icons for UI elements
+- Lottie React Native: Animations
+- React Native Toast Message: Toast notifications
+- Async Storage: Local device storage
+- React Native Modal: Popup modals
+- React Native Animatable: UI animations
+- React Native Ratings: Star rating components
+
+## 🧭 Navigation
+
+The app uses various navigation patterns to enhance user experience:
+
+- **React Navigation Stack**  
+  For navigating between screens with built-in headers and back navigation.
+
+- **React Navigation Bottom Tabs**  
+  Standard bottom tab navigation for main app sections.
+
+- **React Navigation Drawer**  
+  Side drawer menu for quick access to different parts of the app.
+
+- **Custom Bottom Tab Navigator**  
+  A fully custom-built bottom tab navigation component tailored to the app’s unique design and functionality.
+
+### Backend (Node.js + Express + MongoDB)
+
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- JWT Authentication
+- OTP (One-Time Password) via Email
+- REST APIs for:
+  - Authentication
+  - Products
+  - Orders
+  - Reviews
+  - Favorites
+  - User Profiles
+
+---
+
+## 📱 Features
+
+### 👤 Authentication
+
+- Signup / Login
+- OTP Verification
+- Forgot Password / Change Password
+- JWT-based Authorization
+- Secure API Routes
+
+### 🍔 Product & Category Management
+
+- View all food items
+- See product by category
+- Search food by name
+- Product details with image, price, and description
+
+### ⭐ Favorites & Reviews
+
+- Add to Favorites
+- View Favorite Items
+- Submit Product Review
+- View All Reviews
+
+### 🛒 Cart & Checkout
+
+- Add to Cart
+- Cart with Quantity Handling
+- Checkout Process
+- Order Tracking System
+
+### 📦 Orders
+
+- My Orders History
+- Live Order Tracking Status
+
+### ⚙️ Profile & Settings
+
+- View & Update Profile
+- Secure User Data
+- Logout Option
+
+---
+
+## 📂 Folder Structure
+
+```bash
+zayka/
+├── App.js
+├── package.json
+├── src/
+│   ├── assets/          # Images and icons
+│   ├── components/      # Reusable components (Cards, Buttons, etc.)
+│   ├── context/         # Context API setup
+│   ├── navigation/      # Stack, Drawer, and Tab Navigators
+│   ├── redux/           # Redux Toolkit Store, Slices
+│   ├── screens/         # All UI screens (auth, Home, ProductDetails, etc.)
+│   ├── utils/           # toast, fonts, color, animations, data
+│   └── ...
 ```
 
-## Step 2: Build and run your app
+> ⚠️ **Note**: The backend is located in a separate folder/repository.
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+---
 
-### Android
+## 🚀 Getting Started
 
-```sh
-# Using npm
-npm run android
+### Frontend
 
-# OR using Yarn
-yarn android
+```bash
+# Clone the project
+git clone https://github.com/muhammad-osama-rasheed/zayka-app-react-native
+
+# Install dependencies
+cd zayka-app-react-native
+npm install
+
+# Run the app (Android)
+npx react-native run-android
 ```
 
-### iOS
+Make sure Android emulator or device is connected.
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+---
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+### Backend
 
-```sh
-bundle install
+```bash
+# Clone backend project
+git clone https://github.com/muhammad-osama-rasheed/zayka-Backend-NodeJs
+
+# Install dependencies
+cd zayka-Backend-NodeJs
+npm install
+
+# Start server
+npm run dev
 ```
 
-Then, and every time you update your native dependencies, run:
+> Configure your MongoDB URI and JWT Secret in `.env` file inside `zayka-backend`.
 
-```sh
-bundle exec pod install
+---
+
+## 🔒 Environment Variables
+
+Create a `.env` file in your backend root:
+
+```env
+MONGODB_URL=your_mongodb_connection_string
+PORT=your_server_port
+JWT_SECRET=your_jwt_secret
+RESET_PASSWORD_JWT_SECRET=your_password_reset_jwt_secret
+EMAIL=your_email_address
+PASSWORD=your_email_password
+CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
+CLOUDINARY_API_KEY=your_cloudinary_api_key
+CLOUDINARY_API_SECRET=your_cloudinary_api_secret
 ```
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+---
 
-```sh
-# Using npm
-npm run ios
+## 📸 Screenshots (Optional)
 
-# OR using Yarn
-yarn ios
-```
+_Add screenshots or a demo video here._
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+---
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+## 🙋‍♂️ Author
 
-## Step 3: Modify your app
+**Muhammad Osama**
+[LinkedIn](www.linkedin.com/in/osama-rasheed-346780289) • [GitHub](https://github.com/muhammad-osama-rasheed)
 
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+---
