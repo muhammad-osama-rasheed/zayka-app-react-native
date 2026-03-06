@@ -23,6 +23,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import {showErrorToast, showSuccessToast} from '../../utils/toast/ToastService';
 import Loader from '../../components/loader/Loader';
 import LottieView from 'lottie-react-native';
+import useUser from '../../context/features/user/useUser';
 
 const Feedback = ({navigation}) => {
   const [reviews, setReviews] = useState('');
@@ -30,6 +31,8 @@ const Feedback = ({navigation}) => {
   const [loading, setLoading] = useState(false);
 
   const focused = useIsFocused();
+
+  const {token} = useUser();
 
   const getReviews = async () => {
     setLoading(true);
@@ -67,6 +70,9 @@ const Feedback = ({navigation}) => {
         `https://zaykaapi.vercel.app/reviews/${reviewId}`,
         {
           method: 'DELETE',
+          headers: {
+            Authorization: token,
+          },
         },
       );
 

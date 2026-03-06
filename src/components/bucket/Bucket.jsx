@@ -4,31 +4,42 @@ import {moderateScale, scale} from 'react-native-size-matters';
 import {ORANGE_500, WHITE} from '../../utils/colors/Colors';
 import {BOLD} from '../../utils/font/Font';
 import {useNavigation} from '@react-navigation/native';
+import useUser from '../../context/features/user/useUser';
 
 const Bucket = ({count}) => {
   const navigation = useNavigation();
 
-  return (
-    <View style={styles.bucketContainer}>
-      <TouchableOpacity
-        style={styles.imageContainer}
-        onPress={() => navigation.navigate('Cart')}
-        activeOpacity={0.8}>
-        <View style={styles.countContainer}>
-          <Text
-            style={[
-              styles.countText,
-              {
-                fontSize: count > 98 ? moderateScale(10) : moderateScale(13),
-              },
-            ]}>
-            {count < 99 ? count : `99+`}
-          </Text>
-        </View>
+  const {user, token} = useUser();
 
-        <Image style={styles.image} source={require('../../images/bu.png')} />
-      </TouchableOpacity>
-    </View>
+  return (
+    <>
+      {user && token && (
+        <View style={styles.bucketContainer}>
+          <TouchableOpacity
+            style={styles.imageContainer}
+            onPress={() => navigation.navigate('Cart')}
+            activeOpacity={0.8}>
+            <View style={styles.countContainer}>
+              <Text
+                style={[
+                  styles.countText,
+                  {
+                    fontSize:
+                      count > 98 ? moderateScale(10) : moderateScale(13),
+                  },
+                ]}>
+                {count < 99 ? count : `99+`}
+              </Text>
+            </View>
+
+            <Image
+              style={styles.image}
+              source={require('../../images/bu.png')}
+            />
+          </TouchableOpacity>
+        </View>
+      )}
+    </>
   );
 };
 

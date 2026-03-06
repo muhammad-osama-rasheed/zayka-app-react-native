@@ -1,8 +1,6 @@
 import {
   Image,
-  StatusBar,
   StyleSheet,
-  Text,
   TextInput,
   TouchableOpacity,
   View,
@@ -19,10 +17,13 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import {useNavigation} from '@react-navigation/native';
 import {useSelector} from 'react-redux';
 import LottieView from 'lottie-react-native';
+import useUser from '../../context/features/user/useUser';
 const Header = () => {
   const navigation = useNavigation();
 
   const cartItems = useSelector(state => state.cart);
+
+  const {token, user} = useUser();
 
   return (
     <View style={styles.topContainer}>
@@ -36,7 +37,7 @@ const Header = () => {
           />
         </TouchableOpacity>
         <View style={styles.rightIconsContainer}>
-          {cartItems.length > 0 ? (
+          {user && token && cartItems.length > 0 ? (
             <TouchableOpacity
               onPress={() => navigation.navigate('Cart')}
               style={styles.cartContainer}>
